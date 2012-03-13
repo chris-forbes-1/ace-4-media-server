@@ -6,32 +6,44 @@ import org.apache.mina.core.session.IdleStatus;
 import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IoSession;
 
-public class TimeServerHandler extends IoHandlerAdapter
-{
-    @Override
-    public void exceptionCaught( IoSession session, Throwable cause ) throws Exception
-    {
-        cause.printStackTrace();
-    }
-
-    @SuppressWarnings("deprecation")
+public class TimeServerHandler extends IoHandlerAdapter {
 	@Override
-    public void messageReceived( IoSession session, Object message ) throws Exception
-    {
-        String str = message.toString();
-        if( str.trim().equalsIgnoreCase("quit") ) {
-            session.close();
-            return;
-        }
+	public void exceptionCaught(IoSession session, Throwable cause)
+			throws Exception {
+		cause.printStackTrace();
+	}
 
-        Date date = new Date();
-        session.write( date.toString() );
-        System.out.println("Message written...");
-    }
+	@SuppressWarnings("deprecation")
+	@Override
+	public void messageReceived(IoSession session, Object message)
+			throws Exception {
+		String str = message.toString();
+		if (str.trim().equalsIgnoreCase("quit")) {
+			session.close();
+			return;
+		}
 
-    @Override
-    public void sessionIdle( IoSession session, IdleStatus status ) throws Exception
-    {
-        System.out.println( "IDLE " + session.getIdleCount( status ));
-    }
+		Date date = new Date();
+		session.write(date.toString());
+		System.out.println("Message written...");
+	}
+
+	@Override
+	public void sessionClosed(IoSession session) throws Exception {
+		System.out.println("Closed: " + session.getRemoteAddress().toString());
+		super.sessionClosed(session);
+	}
+
+	@Override
+	public void sessionOpened(IoSession session) throws Exception {
+		System.out
+				.println("Conected: " + session.getRemoteAddress().toString());
+		super.sessionOpened(session);
+	}
+
+	@Override
+	public void sessionIdle(IoSession session, IdleStatus status)
+			throws Exception {
+		System.out.println("IDLE " + session.getIdleCount(status));
+	}
 }

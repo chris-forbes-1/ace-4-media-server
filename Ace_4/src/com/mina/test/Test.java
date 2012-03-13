@@ -32,6 +32,7 @@ public class Test {
 
 		IOA.getSessionConfig().setReadBufferSize(2048); // input maximum size
 		IOA.getSessionConfig().setIdleTime(IdleStatus.BOTH_IDLE, 10); // timeout
+		System.out.println("Server lisrining on " + PORT);
 		IOA.bind(new InetSocketAddress(PORT)); // bind to port
 
 	}
