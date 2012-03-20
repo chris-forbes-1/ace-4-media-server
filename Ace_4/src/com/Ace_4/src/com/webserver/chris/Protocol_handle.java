@@ -1,6 +1,10 @@
 package com.webserver.chris;
 
 import java.io.File;
+<<<<<<< HEAD
+=======
+import pages.html.*;
+>>>>>>> origin/master
 import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IoSession;
 
@@ -38,7 +42,7 @@ public class Protocol_handle extends IoHandlerAdapter {
 		}
 		
 		
-		session.write("index.html"); // write the output to the session~ May
+		session.write("<b> TestComplete</b>"); // write the output to the session~ May
 										// change this to console display server
 										// side.
 	}
