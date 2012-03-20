@@ -1,12 +1,13 @@
 package com.webserver.chris;
 
 import java.io.File;
-
+import pages.html.*;
 import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IoSession;
 import org.apache.mina.core.write.WriteRequest;
 import org.apache.mina.core.write.WriteRequestQueue;
 
+@SuppressWarnings("unused")
 public class Protocol_handle extends IoHandlerAdapter {
 	@SuppressWarnings("deprecation")
 	/*
@@ -33,7 +34,7 @@ public class Protocol_handle extends IoHandlerAdapter {
 		}
 		System.out.println(strb.toString());
 		
-		session.write("index.html"); // write the output to the session~ May
+		session.write("<b> TestComplete</b>"); // write the output to the session~ May
 										// change this to console display server
 										// side.
 
