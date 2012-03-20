@@ -1,10 +1,7 @@
 package com.webserver.chris;
 
 import java.io.File;
-<<<<<<< HEAD
-=======
 import pages.html.*;
->>>>>>> origin/master
 import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IoSession;
 
