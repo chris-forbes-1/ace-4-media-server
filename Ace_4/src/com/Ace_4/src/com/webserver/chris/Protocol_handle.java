@@ -1,18 +1,12 @@
 package com.webserver.chris;
 
-import java.io.DataOutputStream;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
 
 import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IoSession;
 import org.apache.mina.core.write.WriteRequest;
 import org.apache.mina.core.write.WriteRequestQueue;
 
-@SuppressWarnings("unused")
 public class Protocol_handle extends IoHandlerAdapter {
 	@SuppressWarnings("deprecation")
 	/*
@@ -25,7 +19,6 @@ public class Protocol_handle extends IoHandlerAdapter {
 		session.close();
 	}
 
-	@SuppressWarnings("deprecation")
 	@Override
 	public void messageReceived(IoSession session, Object Message) {
 		String mes = Message.toString(); // received Object type message (any
@@ -38,13 +31,9 @@ public class Protocol_handle extends IoHandlerAdapter {
 			strb.append(mes.charAt(i)); // remove the char at index i and place
 										// it in the buffer
 		}
-		session.write("<b>Test Complete</b>");
 		System.out.println(strb.toString());
 		
-		
-//		DataOutputStream DOS = new D 
-		session.close();
-//		session.write("index.html"); // write the output to the session~ May
+		session.write("index.html"); // write the output to the session~ May
 										// change this to console display server
 										// side.
 

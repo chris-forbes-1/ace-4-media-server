@@ -1,0 +1,84 @@
+@import url ("layout.css");
+.banner
+{
+    font-family:Baskerville Old Face;
+    font-color:#000000;
+    font-size: 50;
+    
+    background-color:#ECF1EF;
+}
+
+#title_banner
+{
+position: relative;
+background-color:#CCCC99;
+font-family:American Typewriter, 'sans-serif';
+font-color: #000000;
+font-size: 29;
+float: right;
+margin: 10px;
+width: 80%;
+}
+#menu{
+position: relative;
+
+left:0px;
+width: 20%;
+
+}
+#menu ul {
+	list-style-image: url("images/arrow_142.gif");
+}
+#generic_content
+{
+position: relative;
+background-color:#CCCC99;
+font-family:American Typewriter, 'sans-serif';
+font-color: #000000;
+font-size: 18;
+float: right;
+margin: 10px;
+width: 80%;
+padding: 10px;
+}
+
+.subtext
+{
+
+}
+#navlist li
+{
+display: inline;
+list-style-type: none;
+padding-right: 150px;
+}
+
+.author_signatures
+{
+Font-family:times new roman, 'sans-serif';
+Font-size: 6;
+background-position:centre bottom;
+background-color:#ECF1EF;
+}
+
+.background
+{
+background-color:#FFFFFF;
+}
+.foreground
+{
+ foreground-color:003366;
+}
+#contentbox {
+width: 100%;
+margin-top : 7px;
+border: solid;
+border-width: 1px;
+top:20%;
+height:80%;
+
+}
+#horizontal-menu{
+border: solid;
+border-width: 1px;
+}
