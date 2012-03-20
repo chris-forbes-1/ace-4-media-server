@@ -42,7 +42,7 @@ public class Host {
 			//
 			protocol.EXCEPTION((IoSession) IOA.getSessionConfig(), e);
 		} // bind to port
-
+			
 	}
 
 }

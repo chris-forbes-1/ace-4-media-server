@@ -1,12 +1,10 @@
 package com.webserver.chris;
 
 import java.io.File;
-
 import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IoSession;
-import org.apache.mina.core.write.WriteRequest;
-import org.apache.mina.core.write.WriteRequestQueue;
 
+@SuppressWarnings("unused")
 public class Protocol_handle extends IoHandlerAdapter {
 	@SuppressWarnings("deprecation")
 	/*
@@ -31,12 +29,18 @@ public class Protocol_handle extends IoHandlerAdapter {
 			strb.append(mes.charAt(i)); // remove the char at index i and place
 										// it in the buffer
 		}
-		System.out.println(strb.toString());
+		System.out.println(strb.toString());	
+		
+		while(session.isConnected())
+		{
+			session.write(strb);
+			session.close();
+		}
+		
 		
 		session.write("index.html"); // write the output to the session~ May
 										// change this to console display server
 										// side.
-
 	}
 
 }
